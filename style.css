@@ -1,0 +1,117 @@
+/* Establece un estilo básico para todo el cuerpo del documento */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el encabezado */
+header {
+    background-color: #212121;
+    color: #fff;
+    padding: 10px;
+}
+/* Estilo para el contenedor principal */
+/* Estilo para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 5px auto;
+}
+
+/* Estilo para el texto del encabezado */
+.header-text {
+    border: none;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 700; /* Ajusté el valor a 700, ya que 70px no es válido */
+    text-transform: uppercase;
+    padding: 13px 20px;
+}
+
+.imagen {
+    text-decoration: none;
+    color: #fff;
+    display: flex; /* Hace que los elementos dentro del enlace se comporten como flex */
+    align-items: center; /* Alinea verticalmente los elementos dentro del enlace */
+}
+/* Estilo para el logotipo */
+.logo {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 80%; /* Hace que el borde sea circular */
+    background-color: #3498db; /* Puedes cambiar el color de fondo según tus preferencias */
+    /* Otros estilos opcionales según tus necesidades */
+}
+
+/* Estilo para la barra de navegación */
+nav {
+    display: flex;
+}
+
+/* Estilo para la lista de navegación */
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.nav-link {
+    display: inline-block;
+    position: relative;
+    padding: 13px 20px;
+    border: none;
+    background: rgba(51, 50, 50, 0.287);
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-decoration: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 50ms;
+    transition-property: color;
+    margin-right: 2em;
+  }
+  
+  .nav-link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.14) 50%, transparent 100%);
+    transition: left 0.3s;
+  }
+  
+  .nav-link:hover:before {
+    left: 1%;
+  }
+  
+/* Ajustes para el primer enlace de la lista de navegación */
+
+
+/* Estilos para el héroe */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("backgroundImage.png");
+    height: 80vh; /* Usar viewport height para asegurar que la imagen ocupe el 50% de la altura de la ventana */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Estilo para el texto del héroe */
+.hero-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    position: absolute;
+    font-size:2em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
