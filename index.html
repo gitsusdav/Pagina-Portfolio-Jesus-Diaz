@@ -7,8 +7,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lyzLrh3c5754TghMFhNL5z51B5W549M5Tvg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/6cd4e5e0c6.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
   <title>Mi Sitio Web</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -40,20 +42,13 @@
   </nav>
 
   <section class="hero-section bg-dark" id="inicio">
-    <div class="bg-image rounded-3 d-flex align-items-center justify-content-center text-center" style="
-      background-image: linear-gradient(rgba(52, 58, 64, 0.7), rgba(0, 0, 0, 0.7)), url('backgroundImage.png');
-      height: 700px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    ">
+    <div class="bg-image rounded-3 d-flex align-items-center justify-content-center text-center" id="hero">
       <div class="p-2">
         <h1 class="display-1 font-weight-bold text-white">
           Hola, soy Jesus Diaz
         </h1>
-        <p class="lead text-white font-weight-bold">
-          Un desarrollador web fullstack 
+        <p class="lead text-white">
+          Un <span class="span-font-weight-bold">desarrollador web fullstack</span>
           enfocado en la creación de 
           sitios y aplicaciones web
           para impulsar el éxito de un producto. 
@@ -63,13 +58,13 @@
     </div>
   </section>
 
-  <section class="p-5 d-flex about-me bg-dark align-items-center" id="sobreMi" style="background-color: rgba(0, 0, 0, 0.2);">
+  <section class="p-5 d-flex about-me align-items-center" id="sobreMi">
     <div class="container align-items-center">
       <div class="row text-center">
         <div class="col-md-6">
           <!-- Contenido a la izquierda -->
-          <h2 class="text-white text-center p-3 display-1">Sobre mí</h2>
-          <p class="text-center text-white lead">
+          <h2 class="sobreMi-element text-white text-center p-3 display-1">Sobre mí</h2>
+          <p class="sobreMi-element text-center text-white lead">
             Soy un desarrollador web emergente con un enfoque fresco y creativo.
             Mi viaje en el mundo del desarrollo web comenzó recientemente,
             pero mi entusiasmo y dedicación son insuperables.
@@ -77,18 +72,18 @@
             estoy listo para dar vida a tus ideas.
           </p>
   
-          <p class="text-center text-white lead">
+          <p class="sobreMi-element text-center text-white lead">
             Mi objetivo es proporcionar soluciones funcionales y atractivas que satisfagan las
             necesidades de mis clientes. Aunque soy nuevo en el campo, mi actitud de aprendizaje
             constante me impulsa a mantenerme al tanto de las últimas tendencias y tecnologías.
             Estoy emocionado por lo que el futuro del desarrollo web tiene reservado y estoy
             listo para aportar mi creatividad y habilidades a tu proyecto.
           </p>
-          <a href="curriculum.pdf" class="btn btn-outline-light btn-lg" target="_blank">Ver currículum</a>
+          <a href="curriculum.pdf" class="sobreMi-element btn btn-outline-light btn-lg" target="_blank">Ver currículum</a>
         </div>
         <div class="col-md-6">
           <!-- Imagen a la derecha -->
-          <img src="earthWeb.jpeg" class="img-fluid p-1 mx-auto d-block" alt="Imagen de la Tierra">
+          <img src="earthWeb.jpeg" class="sobreMi-element img-fluid p-1 mx-auto d-block" alt="Imagen de la Tierra">
         </div>
       </div>
     </div>
@@ -190,38 +185,6 @@
         </div>
     </div>
 </section>
-
-  
-  
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var navbar = document.getElementById("navbar");
-      var sobreMiSection = document.getElementById("sobreMi");
-      
-      function toggleNavbarClass() {
-        if (window.scrollY >= sobreMiSection.offsetTop - navbar.clientHeight) {
-          navbar.classList.add("fixed-top", "navbar-expand-sm", "bg-dark", "navbar-dark", "justify-content-center");
-        } else {
-          navbar.classList.remove("fixed-top", "navbar-expand-sm", "bg-dark", "navbar-dark", "justify-content-center");
-          navbar.classList.add("fixed-top", "navbar-expand-sm", "navbar-dark", "justify-content-center");
-
-        }
-      }
-  
-      // Cambiar la clase del navbar al hacer scroll
-      window.addEventListener("scroll", toggleNavbarClass);
-  
-      // Llamar a toggleNavbarClass al cargar la página (por si ya está en la sección "Sobre Mí" al principio)
-      toggleNavbarClass();
-    });
-  </script>
-  
-  <!-- Remove the container if you want to extend the Footer to full width. -->
-
-  <!-- Remove the container if you want to extend the Footer to full width. -->
 
   <footer class="bg-dark text-center text-white" style="background-color: rgba(0, 0, 0, 0.2);">
     <!-- Grid container -->
