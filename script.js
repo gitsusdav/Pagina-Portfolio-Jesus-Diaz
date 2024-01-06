@@ -1,37 +1,45 @@
- 
- document.addEventListener("DOMContentLoaded", function() {
-      var navbar = document.getElementById("navbar");
-      var sobreMiSection = document.getElementById("sobreMi");
-      var nombres = document.getElementsByClassName("sobreMi-element");
+ $(document).ready(function () {
 
+  var element = $(".btn").html();
+  //aparecer hero-elements
+  $(".hero-element").css("opacity", "1");
+  $(".hero-element").addClass("animate__animated animate__zoomIn");
+  // opacidad 0 en elementos sobre mi
+  $(".sobreMi-element").css("opacity", "0");
 
-      //volver la opacidad de la section sobreMi 0
-      for (let index = 0; index < nombres.length; index++) {
-        const element = nombres[index];
-        element.style.opacity = "0";
-       }
+  //animacion de navbar
 
-      
-      function toggleNavbarClass() {
-        
-        if (window.scrollY >= sobreMiSection.offsetTop - navbar.clientHeight) {
-          navbar.classList.add("bg-dark");
-          
-          //hacer aparecer la seccion sobreMi
-          for (let index = 0; index < nombres.length; index++) {
-            var element = nombres[index];
-            element.style.opacity = "1";
-           }
-        } 
-        else 
-        {
-          navbar.classList.remove("bg-dark");
-        }
-      }
+  var clientHeight = parseInt($("#navbar").innerHeight());
+  var offset = parseInt($("#sobreMi").offset().top);
+
+  function toggleNavbarClass(){
+    if (window.scrollY >= offset - clientHeight)
+    {
+    $("#navbar").addClass("bg-dark");
+    $(".logo").css("width", "80px");
+    }
+
+  else
+    {
+    $("#navbar").removeClass("bg-dark");
+    $(".logo").css("width", "100px");
+    }
+  };
+
+  $(".btn").waypoint(function(){
+    $(".sobreMi-element").css("opacity", "1");
+  })
+
+  $(".waypoint-1").waypoint(function(){
+    $(".card-1").addClass("animate__animated animate__fadeInLeftBig");
+    $(".card-2").addClass("animate__animated animate__fadeInUpBig");
+    $(".card-3").addClass("animate__animated animate__fadeInRightBig");
+    $(".card").css("opacity", "1");
+  })
+
   
-      // Cambiar la clase del navbar al hacer scroll
-      window.addEventListener("scroll", toggleNavbarClass);
-  
-      // Llamar a toggleNavbarClass al cargar la página (por si ya está en la sección "Sobre Mí" al principio)
-      toggleNavbarClass();
-    });
+  $(window).scroll(toggleNavbarClass);
+  toggleNavbarClass();
+});
+
+

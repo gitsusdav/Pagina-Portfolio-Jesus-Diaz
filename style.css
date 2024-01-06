@@ -7,7 +7,18 @@
     background-size: cover;
     position: relative;
 }
+
+.hero-element
+{
+    opacity: 0;
+}
+
 #navbar
+{
+    transition: 0.5s;
+}
+
+.logo
 {
     transition: 0.5s;
 }
@@ -15,6 +26,11 @@
 .sobreMi-element
 {
     transition: 0.7s;
+}
+
+.btn 
+{
+transition: 0.1s;
 }
 
 .span-font-weight-bold
@@ -25,4 +41,9 @@
 #sobreMi
 {
     background-color: rgba(0, 0, 0, 0.8);
+}
+ 
+.card
+{
+    opacity: 0;
 }
